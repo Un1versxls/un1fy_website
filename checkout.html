@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un1fy | Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="_shared.css">
+    <style>
+        body { background: #faf9f6 !important; color: #1a1a1a !important; margin: 0; font-family: 'Inter', sans-serif; }
+
+        /* NAV */
+        .sub-nav { display: flex; align-items: center; justify-content: space-between; padding: 1.4rem 2rem; border-bottom: 1px solid rgba(0,0,0,0.06); background: rgba(250, 249, 246, 0.95); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 15px rgba(0,0,0,0.04); }
+        .sub-nav .brand { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.4rem; color: #1a1a1a; text-decoration: none; letter-spacing: -0.5px; }
+        .sub-nav .brand span { color: var(--accent); }
+        .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.55rem 1.2rem; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); border-radius: 100px; color: #1a1a1a; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: 0.25s; }
+        .back-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateX(-3px); }
+
+        /* LAYOUT */
+        .page-wrap { max-width: 1150px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+        .page-header { text-align: center; margin-bottom: 3.5rem; }
+        .page-header h1 { font-family: 'Outfit', sans-serif; font-size: 2.8rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .page-header p { color: #6b6b6b; font-size: 1.05rem; }
+        .checkout-grid { display: grid; grid-template-columns: 1fr 400px; gap: 3rem; align-items: start; }
+
+        /* PLAN CARDS */
+        .plans-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-top: 1rem; }
+        .plan-card { background: #ffffff; border: 1.5px solid rgba(0,0,0,0.07); border-radius: 18px; padding: 2rem; cursor: pointer; transition: 0.3s cubic-bezier(0.2,1,0.3,1); position: relative; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+        .plan-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+        .plan-card.active { border-color: var(--accent); background: rgba(201, 168, 124, 0.06); box-shadow: 0 0 0 2px var(--accent), 0 12px 30px rgba(201, 168, 124, 0.1); }
+        .plan-card.active::after { content: '✓'; position: absolute; top: 1rem; right: 1.2rem; color: var(--accent); font-weight: 800; font-size: 1.1rem; }
+        .plan-card .tier { font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 800; margin-bottom: 0.3rem; }
+        .plan-card .price { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+        .plan-card .price sub { font-size: 0.9rem; font-weight: 400; color: #6b6b6b; }
+        .plan-card ul { list-style: none; padding: 0; margin: 0; color: #6b6b6b; font-size: 0.9rem; }
+        .plan-card ul li { margin-bottom: 0.4rem; }
+        .plan-card ul li::before { content: '✓ '; color: var(--accent); }
+
+        /* FORM */
+        .form-card { background: #ffffff; backdrop-filter: blur(30px); border: 1px solid rgba(0,0,0,0.08); border-radius: 22px; padding: 2.5rem; position: sticky; top: 90px; box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
+        .form-card h3 { font-size: 1.15rem; font-weight: 700; margin: 0 0 1.4rem; }
+        label { display: block; font-size: 0.78rem; font-weight: 600; color: #6b6b6b; margin-bottom: 0.4rem; letter-spacing: 0.04em; text-transform: uppercase; }
+        input { width: 100%; background: rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.1); color: #1a1a1a; padding: 0.85rem 1.1rem; border-radius: 10px; font-size: 0.95rem; font-family: inherit; margin-bottom: 1.1rem; transition: 0.25s; box-sizing: border-box; }
+        input:focus { outline: none; border-color: var(--accent); background: rgba(201, 168, 124, 0.05); box-shadow: 0 0 0 3px rgba(201, 168, 124, 0.12); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .submit-btn { width: 100%; margin-top: 0.5rem; padding: 1.1rem; background: var(--accent); color: #fff; font-family: inherit; font-size: 1rem; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; transition: 0.25s; box-shadow: 0 4px 20px rgba(201, 168, 124, 0.3); animation: btn-pulse 2.5s ease-in-out infinite; }
+        .submit-btn:hover { background: #b8956a; color: #fff; transform: scale(1.02); box-shadow: 0 6px 25px rgba(201, 168, 124, 0.4); }
+        .form-note { color: #888; font-size: 0.78rem; text-align: center; margin-top: 0.8rem; line-height: 1.5; }
+        .form-note a { color: var(--accent); text-decoration: none; }
+
+        /* FREE BANNER */
+        .free-notice { background: rgba(201, 168, 124, 0.08); border: 1px solid rgba(201, 168, 124, 0.2); border-radius: 14px; padding: 1.1rem 1.4rem; margin-bottom: 1.5rem; }
+        .free-notice h4 { color: var(--accent); font-size: 0.95rem; margin: 0 0 0.35rem; }
+        .free-notice p { color: #6b6b6b; font-size: 0.83rem; margin: 0; line-height: 1.6; }
+
+        @media (max-width: 900px) { .checkout-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 580px) { .plans-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } .page-header h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Un1fy</div>
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+        <div class="loading-dots">
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+        </div>
+    </div>
+
+    <nav class="sub-nav">
+        <a href="index.html" class="brand">Un1fy<span>.</span></a>
+        <a href="index.html" class="back-btn">← Back home</a>
+    </nav>
+
+    <div class="page-wrap">
+        <div class="page-header">
+            <h1>🛒 Secure Checkout</h1>
+            <p>Select your tier and unlock the engine.</p>
+        </div>
+
+        <div class="checkout-grid">
+            <!-- Plan Selection -->
+            <div>
+                <p style="color:#6b6b6b; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:1rem;">Select Plan</p>
+                <div class="plans-grid">
+                    <div class="plan-card active" onclick="selectPlan(this,'Free','$0',true)">
+                        <div class="tier">Free 🆓</div>
+                        <div class="price">$0</div>
+                        <ul>
+                            <li>5 Emails (Lifetime)</li>
+                            <li>2 Extractions (Lifetime)</li>
+                            <li style="color:var(--accent);">Approval Required</li>
+                        </ul>
+                    </div>
+                    <div class="plan-card" onclick="selectPlan(this,'Pro','$29/mo',false)">
+                        <div class="tier">Pro ⭐</div>
+                        <div class="price">$29<sub>/mo</sub></div>
+                        <ul>
+                            <li>15 Emails / Month</li>
+                            <li>10 Extractions / Month</li>
+                            <li>Monthly Reset</li>
+                        </ul>
+                    </div>
+                    <div class="plan-card" onclick="selectPlan(this,'Elite','$79/mo',false)">
+                        <div class="tier">Elite 💎</div>
+                        <div class="price">$79<sub>/mo</sub></div>
+                        <ul>
+                            <li>50 Emails / Month</li>
+                            <li>50 Extractions / Month</li>
+                            <li>Priority Access</li>
+                        </ul>
+                    </div>
+                    <div class="plan-card" onclick="selectPlan(this,'Unlimited','$149/mo',false)">
+                        <div class="tier">Unlimited 🚀</div>
+                        <div class="price">$149<sub>/mo</sub></div>
+                        <ul>
+                            <li>100 Emails / Run</li>
+                            <li>50 Extractions / Run</li>
+                            <li>No Cooldowns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="form-card">
+                    <!-- FREE FORM -->
+                    <form id="free-form" action="https://formsubmit.co/un1versxldev+un1fy@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Un1fy Free Trial Request">
+                        <input type="hidden" name="_next" value="https://un1versxls.github.io/uni1fy_website/index.html?success=checkout">
+                        
+                        <div class="free-notice">
+                            <h4>🔐 Owner Approval Required</h4>
+                            <p>Free trials are strictly one-per-person and must be manually approved by the owner. Please submit your email for review.</p>
+                        </div>
+                        <h3>Request Free Trial</h3>
+                        <label>Your Email</label>
+                        <input type="email" name="email" id="free-email" placeholder="you@email.com" required>
+                        <label>Why do you want access? <span style="color:#888;font-size:0.75rem;">(optional)</span></label>
+                        <input type="text" name="reason" id="free-reason" placeholder="e.g. Testing for my agency...">
+                        <button type="submit" class="submit-btn" id="free-btn">📨 Request Free Trial</button>
+                        <p class="form-note">✋ Upon submission, you will hear back via email in 1-2 days maximum if your trial is approved.</p>
+                    </form>
+
+                    <!-- PAID FORM -->
+                    <form id="paid-form" style="display:none;" onsubmit="handlePaidSubmit(event)">
+                        <h3>Account Details</h3>
+                        <label>Full Name</label>
+                        <input type="text" id="paid-name" placeholder="Your full name">
+                        <label>Email Address</label>
+                        <input type="email" id="paid-email" placeholder="you@email.com">
+                        <label>License Key <span style="color:#888;font-size:0.75rem;">(leave blank to generate)</span></label>
+                        <input type="text" placeholder="UN1FY-XXXX-XXXX">
+
+                        <h3 style="margin-top:1.5rem;">Payment Method</h3>
+                        <label>Card Number</label>
+                        <input type="text" id="paid-cc" placeholder="1234 5678 9012 3456" maxlength="19">
+                        <div class="form-row">
+                            <div>
+                                <label>Expiry</label>
+                                <input type="text" id="paid-exp" placeholder="MM / YY" maxlength="7">
+                            </div>
+                            <div>
+                                <label>CVC</label>
+                                <input type="text" id="paid-cvc" placeholder="123" maxlength="4">
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn" id="paid-btn">Complete Order — <span id="price-label">$29/mo</span></button>
+                        <p class="form-note">🔒 256-bit encrypted. <a href="legal.html">Terms apply.</a></p>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+    <footer style="padding:2.5rem 2rem; border-top:1px solid rgba(0,0,0,0.06); display:flex; justify-content:space-between; align-items:center; color:#888; font-size:0.8rem; max-width:1150px; margin:0 auto;">
+        <span>&copy; 2026 UN1FY</span>
+        <div style="display:flex;gap:1.5rem;">
+            <a href="contact.html" style="color:#888;text-decoration:none;">Contact</a>
+            <a href="legal.html" style="color:#888;text-decoration:none;">Legal</a>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').classList.add('hidden');
+            }, 2000);
+        });
+
+        let isFree = true;
+
+        // Auto-detect plan from URL
+        const params = new URLSearchParams(location.search);
+        const urlPlan = params.get('plan');
+        if (urlPlan && urlPlan !== 'free') {
+            const cards = document.querySelectorAll('.plan-card');
+            const map = { pro: 1, elite: 2, unlimited: 3 };
+            const prices = { pro: '$29/mo', elite: '$79/mo', unlimited: '$149/mo' };
+            const names = { pro: 'Pro', elite: 'Elite', unlimited: 'Unlimited' };
+            if (map[urlPlan] !== undefined) {
+                cards[0].classList.remove('active');
+                cards[map[urlPlan]].classList.add('active');
+                selectPlan(cards[map[urlPlan]], names[urlPlan], prices[urlPlan], false);
+            }
+        }
+
+        function selectPlan(el, name, price, free) {
+            document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            isFree = free;
+            document.getElementById('free-form').style.display = free ? 'block' : 'none';
+            document.getElementById('paid-form').style.display = free ? 'none' : 'block';
+            
+            // Manage required fields based on visibility
+            document.getElementById('free-email').required = free;
+            document.getElementById('paid-name').required = !free;
+            document.getElementById('paid-email').required = !free;
+            document.getElementById('paid-cc').required = !free;
+            document.getElementById('paid-exp').required = !free;
+            document.getElementById('paid-cvc').required = !free;
+
+            if (!free) document.getElementById('price-label').textContent = price;
+        }
+
+        function handlePaidSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('paid-btn');
+            btn.textContent = '⏳ Processing...';
+            btn.disabled = true;
+            btn.style.animation = 'none';
+            setTimeout(() => {
+                btn.textContent = '✅ Order placed! Check your email.';
+                btn.style.background = '#10B981';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

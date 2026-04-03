@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un1fy | Lead & SMS Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Un1fy</div>
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+        <div class="loading-dots">
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+        </div>
+    </div>
+
+    <div class="accent-glow" style="top: -10%; right: -5%;"></div>
+    <div class="accent-glow" style="bottom: 10%; left: -5%; width: 30vw;"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-pulse">Un1fy</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Engine</a></li>
+                <li><a href="#pricing">Tiers</a></li>
+                <li><a href="status.html">Status</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <div class="magnetic-wrap">
+                        <a href="checkout.html" class="btn btn-primary magnetic" style="color: #FFF !important; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; border: 1px solid rgba(255,255,255,0.3); padding: 0.55rem 1.4rem;">Shop Now →</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content reveal">
+                <h1>Scale Your <span>Outreach</span></h1>
+                <p>The premium infrastructure for direct lead generation.<br>Mine emails, fire SMS, dominate your niche.</p>
+                <div class="hero-btns">
+                    <div class="magnetic-wrap">
+                        <a href="checkout.html" class="btn btn-primary magnetic">Start for Free →</a>
+                    </div>
+                    <div class="magnetic-wrap">
+                        <a href="#features" class="btn btn-outline magnetic">See How It Works</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header reveal" style="text-align:center; margin-bottom: 4rem;">
+                <h2 style="font-size: 3.5rem; margin-bottom: 0.5rem;">The Engine</h2>
+                <p style="color: var(--dim);">Every tier unlocks more AI power.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card reveal">
+                    <span>01</span>
+                    <h3>⛏ Lead Excavator</h3>
+                    <p>🎯 Stop manual lead hunting. Our excavator <strong>mines direct emails from any business domain</strong>, validating contact data in real-time.<br><br>📋 Build a 1,000+ lead list in minutes, perfectly formatted and auto-exported to your <strong>Google Sheets</strong>, ready to use immediately.<br><br>🟢 Found emails are highlighted green — you always know what's been validated.</p>
+                    <div class="magnetic-wrap" style="margin-top: 1.5rem; display: block;"><a href="#pricing" class="btn btn-outline magnetic">Learn More</a></div>
+                </div>
+                <div class="feature-card reveal">
+                    <span>02</span>
+                    <h3>💬 Instant Reach</h3>
+                    <p>⚡ Auto-response SMS fires <strong>the second a lead is found</strong> — before your competitors even notice.<br><br>🔁 24-hour follow-up loops ensure you're always top-of-mind. Set it once, it runs forever.<br><br>📈 Proven to convert <strong>10x better</strong> than manual outreach. Close deals while you sleep.</p>
+                    <div class="magnetic-wrap" style="margin-top: 1.5rem; display: block;"><a href="#pricing" class="btn btn-outline magnetic">Learn More</a></div>
+                </div>
+                <div class="feature-card reveal" style="grid-column: span 2;">
+                    <span>03</span>
+                    <h3>🤖 AI Model Tiers</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;">
+                            <h4 style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; margin-bottom: 0.5rem;">🆓 Free Model</h4>
+                            <p style="font-size: 0.9rem;">Basic domain scanning only. No AI assistance. Manual pattern matching with fixed confidence threshold.</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;">
+                            <h4 style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; margin-bottom: 0.5rem;">⭐ Pro Model</h4>
+                            <p style="font-size: 0.9rem;">AI-assisted email pattern matching. Basic confidence scoring. Improved discovery rate over free tier.</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;">
+                            <h4 style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; margin-bottom: 0.5rem;">💎 Elite Model</h4>
+                            <p style="font-size: 0.9rem;">Advanced AI email discovery. Multi-source scanning. Bypass pink highlight re-checks. Adjustable confidence slider.</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;">
+                            <h4 style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; margin-bottom: 0.5rem;">🚀 Unlimited Model</h4>
+                            <p style="font-size: 0.9rem;">Full AI excavation engine. Excavator V2 with BBB, DuckDuckGo scanning. Unlimited bypass. Email V2 extractor. All confidence levels.</p>
+                        </div>
+                    </div>
+                    <div class="magnetic-wrap" style="margin-top: 1.5rem; display: block;"><a href="#pricing" class="btn btn-outline magnetic">Unlock AI Power</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header reveal" style="text-align:center; margin-bottom: 4rem;">
+                <h2 style="font-size: 3.5rem; margin-bottom: 0.5rem;">The Tiers</h2>
+                <p style="color: var(--dim);">Start free. Scale when you're ready.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card reveal">
+                    <div class="tier">🆓 Free</div>
+                    <div class="price">$0</div>
+                    <ul class="tier-features">
+                        <li>5 Emails (Lifetime)</li>
+                        <li>2 Extractions (Lifetime)</li>
+                        <li>Full UI Access</li>
+                        <li style="color: var(--dim); font-style: italic; font-size: 0.8rem; margin-top: 0.5rem;">Basic domain scanning — no AI assistance</li>
+                    </ul>
+                    <a href="checkout.html?plan=free" class="btn btn-outline" style="display:block; text-align:center;">Start Free</a>
+                </div>
+                <div class="pricing-card featured reveal">
+                    <div class="tier">⭐ Pro</div>
+                    <div class="price">$29<span>/mo</span></div>
+                    <ul class="tier-features">
+                        <li>15 Emails / Month</li>
+                        <li>10 Extractions / Month</li>
+                        <li>Monthly Reset</li>
+                        <li style="color: var(--dim); font-style: italic; font-size: 0.8rem; margin-top: 0.5rem;">AI-assisted email pattern matching — basic confidence scoring</li>
+                    </ul>
+                    <a href="checkout.html?plan=pro" class="btn btn-primary" style="display:block; text-align:center;">Go Pro</a>
+                </div>
+                <div class="pricing-card reveal">
+                    <div class="tier">💎 Elite</div>
+                    <div class="price">$79<span>/mo</span></div>
+                    <ul class="tier-features">
+                        <li>50 Emails / Month</li>
+                        <li>50 Extractions / Month</li>
+                        <li>Priority Access</li>
+                        <li style="color: var(--dim); font-style: italic; font-size: 0.8rem; margin-top: 0.5rem;">Advanced AI email discovery — multi-source scanning, bypass pink highlight, confidence slider</li>
+                    </ul>
+                    <a href="checkout.html?plan=elite" class="btn btn-outline" style="display:block; text-align:center;">Get Elite</a>
+                </div>
+                <div class="pricing-card reveal">
+                    <div class="tier">🚀 Unlimited</div>
+                    <div class="price">$149<span>/mo</span></div>
+                    <ul class="tier-features">
+                        <li>100 Emails / Run</li>
+                        <li>50 Extractions / Run</li>
+                        <li>No Cooldowns</li>
+                        <li style="color: var(--dim); font-style: italic; font-size: 0.8rem; margin-top: 0.5rem;">Full AI excavation engine — Excavator V2, unlimited bypass, all confidence levels, email V2</li>
+                    </ul>
+                    <a href="checkout.html?plan=unlimited" class="btn btn-outline" style="display:block; text-align:center;">Go Unlimited</a>
+                </div>
+                <div class="pricing-card featured reveal">
+                    <div class="tier">⭐ Pro</div>
+                    <div class="price">$29<span>/mo</span></div>
+                    <ul class="tier-features">
+                        <li>15 Emails / Month</li>
+                        <li>10 Extractions / Month</li>
+                        <li>Monthly Reset</li>
+                        <li style="color: var(--dim); font-style: italic; font-size: 0.8rem; margin-top: 0.5rem;">AI-assisted email pattern matching — basic confidence scoring</li>
+                    </ul>
+                    <a href="checkout.html?plan=pro" class="btn btn-primary" style="display:block; text-align:center;">Go Pro</a>
+                </div>
+                <div class="pricing-card reveal">
+                    <div class="tier">💎 Elite</div>
+                    <div class="price">$79<span>/mo</span></div>
+                    <ul class="tier-features">
+                        <li>50 Emails / Month</li>
+                        <li>50 Extractions / Month</li>
+                        <li>Priority Access</li>
+                        <li style="color: var(--dim); font-style: italic; font-size: 0.8rem; margin-top: 0.5rem;">Advanced AI email discovery — multi-source scanning, bypass pink highlight, confidence slider</li>
+                    </ul>
+                    <a href="checkout.html?plan=elite" class="btn btn-outline" style="display:block; text-align:center;">Get Elite</a>
+                </div>
+                <div class="pricing-card reveal">
+                    <div class="tier">🚀 Unlimited</div>
+                    <div class="price">$149<span>/mo</span></div>
+                    <ul class="tier-features">
+                        <li>100 Emails / Run</li>
+                        <li>50 Extractions / Run</li>
+                        <li>No Cooldowns</li>
+                        <li style="color: var(--dim); font-style: italic; font-size: 0.8rem; margin-top: 0.5rem;">Full AI excavation engine — Excavator V2, unlimited bypass, all confidence levels, email V2</li>
+                    </ul>
+                    <a href="checkout.html?plan=unlimited" class="btn btn-outline" style="display:block; text-align:center;">Go Unlimited</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" style="padding: 4rem 0; border-top: 1px solid var(--border);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; color: var(--dim); font-size: 0.82rem;">
+            <p>&copy; 2026 UN1FY. Built for performance.</p>
+            <div style="display: flex; gap: 2rem;">
+                <a href="contact.html" style="color: var(--dim); text-decoration: none;">Contact</a>
+                <a href="status.html" style="color: var(--dim); text-decoration: none;">Status</a>
+                <a href="legal.html" style="color: var(--dim); text-decoration: none;">Legal</a>
+                <a href="checkout.html" style="color: var(--dim); text-decoration: none;">Checkout</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').classList.add('hidden');
+            }, 2000);
+        });
+    </script>
+    <style>
+        #global-toast {
+            position: fixed;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(16, 185, 129, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10B981;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
+            transition: top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+        }
+        #global-toast.show {
+            top: 40px;
+        }
+    </style>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const successType = urlParams.get('success');
+        
+        if (successType) {
+            window.history.replaceState({}, document.title, window.location.pathname);
+            const toast = document.createElement('div');
+            toast.id = 'global-toast';
+            
+            // Customize text based on the param value
+            let msg = "Successfully Delivered!";
+            if (successType === 'contact') msg = "Message Sent! We'll reply soon.";
+            if (successType === 'checkout') msg = "Trial Requested! Reviewing now.";
+            if (successType === 'free_trial') msg = "Plan Requested! Check your email.";
+            
+            toast.innerHTML = `<span style="font-size:1.2rem;">✅</span> ${msg}`;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => toast.classList.add('show'), 100);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 500);
+            }, 4500);
+        }
+    </script>
+</body>
+</html>

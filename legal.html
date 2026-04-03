@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un1fy | Legal & Terms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="_shared.css">
+    <style>
+        body { background: #faf9f6 !important; color: #1a1a1a !important; margin: 0; font-family: 'Inter', sans-serif; }
+        .sub-nav { display: flex; align-items: center; justify-content: space-between; padding: 1.4rem 2rem; border-bottom: 1px solid rgba(0,0,0,0.06); background: rgba(250, 249, 246, 0.95); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 15px rgba(0,0,0,0.04); }
+        .sub-nav .brand { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.4rem; color: #1a1a1a; text-decoration: none; }
+        .sub-nav .brand span { color: var(--accent); }
+        .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.55rem 1.2rem; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); border-radius: 100px; color: #1a1a1a; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: 0.25s; }
+        .back-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateX(-3px); }
+        .page-wrap { max-width: 750px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+        .page-header { text-align: center; margin-bottom: 3rem; }
+        .page-header h1 { font-family: 'Outfit', sans-serif; font-size: 2.8rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .page-header p { color: #6b6b6b; }
+        .legal-card { background: #ffffff; border: 1px solid var(--border); border-radius: 18px; padding: 2rem 2.5rem; margin-bottom: 1.2rem; transition: 0.25s; box-shadow: 0 2px 12px var(--shadow); }
+        .legal-card:hover { border-color: var(--accent); background: rgba(201, 168, 124, 0.03); box-shadow: 0 8px 25px var(--shadow-lg); }
+        .legal-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.8rem; color: #1a1a1a; }
+        .legal-card p { color: #6b6b6b; font-size: 0.92rem; line-height: 1.75; margin: 0; }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">Un1fy</div>
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+        <div class="loading-dots">
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+        </div>
+    </div>
+
+    <nav class="sub-nav">
+        <a href="index.html" class="brand">Un1fy<span>.</span></a>
+        <a href="index.html" class="back-btn">← Back home</a>
+    </nav>
+    <div class="page-wrap">
+        <div class="page-header">
+            <h1>⚖️ Legal</h1>
+            <p>Terms of Service, Privacy Policy, and License Terms.</p>
+        </div>
+
+        <div class="legal-card">
+            <h3>Terms of Service</h3>
+            <p>By using Un1fy Automations, you agree to use the software in compliance with all applicable laws. You may not use the software to send unsolicited communications or violate any anti-spam legislation. Your license is non-transferable and bound to your machine hardware.</p>
+        </div>
+        <div class="legal-card">
+            <h3>Privacy Policy</h3>
+            <p>Un1fy does not collect, store, or share any personal data. All automation state data is stored locally on your machine using HMAC-encrypted files. We do not have access to your Google credentials, email content, or lead data at any time.</p>
+        </div>
+        <div class="legal-card">
+            <h3>Refund Policy</h3>
+            <p>We offer a 7-day money-back guarantee for all paid tiers. If you're not satisfied, contact us at support@un1fy.io within 7 days of purchase for a full refund. No questions asked.</p>
+        </div>
+        <div class="legal-card">
+            <h3>License</h3>
+            <p>Software licenses are non-transferable and machine-locked. Compiled editions (.exe) are protected and may not be reverse-engineered, decompiled, or redistributed. Open-source editions are provided for personal review only and may not be commercially distributed without written permission.</p>
+        </div>
+    </div>
+    <footer style="padding:2.5rem 2rem; border-top:1px solid rgba(0,0,0,0.06); display:flex; justify-content:space-between; align-items:center; color:#888; font-size:0.8rem; max-width:750px; margin:0 auto;">
+        <span>&copy; 2026 UN1FY. All rights reserved.</span>
+        <a href="contact.html" style="color:#888;text-decoration:none;">Contact Us</a>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').classList.add('hidden');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
